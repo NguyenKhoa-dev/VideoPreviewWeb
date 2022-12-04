@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Video Media</title>
+</head>
+
+<body>
+    <header>
+        <h1><span>V</span>ideo <span>P</span>review</h1>
+        <div>
+            <label class="btn btn-primary" for="choose-video"><input id="choose-video" type="file"
+                    accept="video/mp4,video/x-m4v,video/*">Choose Video</label>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="content-header">
+            <h1 class="content-title"><span>E</span>njoy It<span>!</span></h1>
+            <div class="btn btn-primary" onclick="handleCloseVideo()">Close</div>
+        </div>
+        <div class="content-video">
+            <div class="video-bx is-pause">
+                <video onclick="handlePlayVideo()" id="video" src="" type="video/mp4"></video>
+                <div class="video-options">
+                    <div class="left">
+                        <div class="play-back">
+                            <ion-icon name="play-back" onclick="handleSkipTimeVideo(-10)"></ion-icon>
+                            <div id="play-pause-btn" onclick="handlePlayVideo()">
+                                <ion-icon name="play"></ion-icon>
+                            </div>
+                            <ion-icon name="play-forward" onclick="handleSkipTimeVideo(10)"></ion-icon>
+                            <ion-icon name="infinite" onclick="handleLoopVideo(this)"></ion-icon>
+                        </div>
+                        <div class="video-progress">
+                            <div id="video-current-time">00:00</div>
+                            <div class="progress-bar">
+                                <div id="progress-detail"></div>
+                            </div>
+                            <div id="video-duration">00:00</div>
+                        </div>
+                    </div>     
+                    <div class="right">
+                        <div class="video-volume">
+                            <ion-icon onclick="handleMuteVideo()" id="volume-icon" name="volume-high"></ion-icon>
+                            <input id="video-volume-range" type="range" min="0" max="100" value="100" steps="1">
+                        </div>
+                        <ion-icon name="expand" onclick="handleExpandVideo()"></ion-icon>
+                    </div>                                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content no-result">
+        <h1><span>N</span>othing to watch!!!</h1>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
